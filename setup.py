@@ -16,7 +16,7 @@ class CMakeBuild(build_ext):
     """
     def run(self):
         build_dir = os.path.dirname(os.path.realpath(__file__))
-        for cmd, target in [("cmake", ""), ("make -j -C", "install")]:
+        for cmd, target in [("cmake -D CUDA_COMMON_INCLUDE_DIRS=/etc/NVIDIA_CUDA-7.0_Samples/common/inc/", ""), ("make -j -C", "install")]:
             if os.system("%s %s %s" % (cmd, build_dir, target)) != 0:
                 print("ERROR: Failed to run %s" % cmd)
                 sys.exit(1)

@@ -397,8 +397,8 @@ extern int convolution(cudanetmat* wts, cudanetmat* imgs, cudanetmat* targets, i
     }
     if (imgPixels != imgSizeY*imgSizeX) 
         return ERROR_CONV_DIMENSION;
-    if (numFilters % 16 != 0) 
-        return ERROR_CONV_NUM_FILTERS;
+    //if (numFilters % 16 != 0) 
+    //    return ERROR_CONV_NUM_FILTERS;
     if (targets->size[0] != numFilters * numModules || targets->size[1] != numImages) 
         return ERROR_INCOMPATIBLE_DIMENSIONS;
 
